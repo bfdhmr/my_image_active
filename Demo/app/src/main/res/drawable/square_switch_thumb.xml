@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- 滑块背景 -->
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#FFFFFF" />
+                    <size android:width="64dp" android:height="64dp" />
+                    <corners android:radius="8dp" />
+                    <padding android:top="8dp" android:bottom="10dp" />
+                    <stroke android:width="0dp" android:color="#BDBDBD" />
+                </shape>
+            </item>
+            <!-- 选中状态图标 -->
+            <item
+                android:drawable="@drawable/switch_icon_on"
+                android:gravity="center_horizontal|top"
+                android:width="32dp"
+                android:height="32dp" />
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <!-- 滑块背景 -->
+            <item>
+                <shape android:layout_height="wrap_content" android:shape="rectangle">
+                    <solid android:color="#FFFFFF" />
+                    <size android:width="64dp" android:height="64dp" />
+                    <corners android:radius="8dp" />
+                    <padding android:top="8dp" android:bottom="10dp" />
+                    <stroke android:width="0dp" android:color="#BDBDBD" />
+                </shape>
+            </item>
+            <!-- 未选中状态图标 -->
+            <item
+                android:drawable="@drawable/switch_icon_off"
+                android:gravity="center_horizontal|top"
+                android:width="32dp"
+                android:height="32dp" />
+        </layer-list>
+    </item>
+</selector>

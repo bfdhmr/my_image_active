@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <!-- 添加相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 添加存储权限用于保存照片 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- 添加读取存储权限用于访问相册 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- 对于Android 13及以上版本，使用READ_MEDIA_IMAGES权限 -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- 确保应用在有相机的设备上运行 -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Demo">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- 添加相机拍摄页面的Activity -->
+        <activity
+            android:name=".CameraCaptureActivity"
+            android:exported="false" 
+            android:screenOrientation="portrait"/>
+        <!-- 添加相册选择页面的Activity -->
+        <activity
+            android:name=".AlbumImagePickerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ImagePreviewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Demo.FullScreen" />
+        <!-- 注册图片裁剪页面的Activity -->
+        <activity
+            android:name=".ImageClipActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
